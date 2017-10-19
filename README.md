@@ -1,0 +1,2 @@
+# smartHome
+intelligent home controller
