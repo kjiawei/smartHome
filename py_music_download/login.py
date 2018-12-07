@@ -12,6 +12,10 @@ import urllib.request
 from selenium.webdriver.common.action_chains import ActionChains
 #https://www.cnblogs.com/wulisz/p/7640468.html
 
+import sqlite3
+import sys
+import os
+
 #Selenium WebDriver的使用  https://www.cnblogs.com/sammyzhang/p/5280416.html
 #from pyvirtualdisplay import Display #为了验证firefox加进来
 #微盘下载思路 https://blog.csdn.net/jclian91/article/details/77113594
@@ -20,8 +24,33 @@ from selenium.webdriver.common.action_chains import ActionChains
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtSql import QSqlDatabase , QSqlQuery
 from Ui_login import Ui_Dialog #Ui前面有个.被去掉,eric 6的一个bug!!!
 
+def createDB():
+    global searchHistoryDb
+    # 添加数据库
+    searchHistoryDb =  QSqlDatabase.addDatabase('QSQLITE')
+	# 设置数据库名称
+    searchHistoryDb.setDatabaseName('./searchHistory.db')
+	# 判断是否打开
+    if not searchHistoryDb.open():
+        QMessageBox.critical(None,  ("Cannot open database"),
+        ("Unable to establish a database connection. \n"
+        "This example needs SQLite support. Please read "
+        "the Qt SQL driver documentation for information "
+        "how to build it.\n\n"
+        "Click Cancel to exit."),
+        QMessageBox.Cancel)
+        return False
+		
+	# 声明数据库查询对象
+        query = QSqlQuery()
+	# 创建表
+        query.exec("create table musicLike(id int primary key,name vchar, createdTime TimeStamp NOT NULL DEFAULT (datetime('now', 'localtime')))")#name vchar, sex vchar, age int, deparment vchar
+	#添加记录
+        #,datetime                #(datetime('now','localtime')) 
+        return True
 
 class Login(QDialog, Ui_Dialog):
     """
@@ -66,7 +95,7 @@ class Login(QDialog, Ui_Dialog):
         #browser= webdriver.Firefox()    #
         #browser= webdriver.Ie()  #IE驱动可能要系统设置和注册表
 		#edge浏览器 https://blog.csdn.net/qq_29720415/article/details/53521746
-		
+
     def timerEvent(self, event):
         if self.step >=100:
             self.timer.stop()
@@ -75,7 +104,7 @@ class Login(QDialog, Ui_Dialog):
         self.pbar.setValue(self.step)
 		
     @pyqtSlot()
-    def on_startSearch_clicked(self):#加一个正在操作的进度条
+    def on_startSearch_clicked(self):#把搜索历史添加到数据库 加一个正在操作的进度条
         #self.timer.start(10, self)
 		#隐藏掉网页或关闭上一个页面
         if self.timer.isActive(): 
@@ -85,6 +114,35 @@ class Login(QDialog, Ui_Dialog):
 
         
         musicName = self.searchName.text()
+        '''
+        query = QSqlQuery("",searchHistoryDb)
+        query= 'insert into student values (?,?,?)'
+        query.prepare(query)
+        query.addBindValue(2)
+        query.addBindValue(musicName)
+        query.addBindValue(datetime())
+        if not query.exec_():
+            print(query.lastError())
+        else:
+            print('inserted')
+        #QString queryStr;
+		
+		'''
+        '''
+		queryStr.append("INSERT INTO ")
+        .append(DBTABLE_RECORD)
+        .append("(time, type, isEffect)")
+        .append(" values('")
+        .append(QString::number(record.time))
+        .append("', '")
+        .append(QString::number(record.type))
+		.append("', '")
+        .append(QString::number(record.isEffect))
+        .append("')");
+    return query.exec(queryStr);
+	
+        query.exec("insert into musicLike values(1,'test',datetime())")
+		'''
         self.startDownload.setEnabled(True)
         #global browser
         browser.get('http://www.kugou.com/')
@@ -122,6 +180,9 @@ class Login(QDialog, Ui_Dialog):
 
     @pyqtSlot()
     def on_startDownload_clicked(self):
+        if self.searchName.text() == musicName:
+            self.startSearch.click()
+			
         if self.resultNum.text()=='':
             QMessageBox.information(self, "QListView", "请输入歌曲编号!")#QToast
         else:
@@ -150,8 +211,9 @@ class Login(QDialog, Ui_Dialog):
             global directory1
             path = directory1+'\%s.mp3' % name
             urllib.request.urlretrieve(Local, path, cbk)
-            QMessageBox.information(self, "下载结果", "下载成功")#换成有按键处理的来刷新下载按钮
-            #self.startDownload.setEnabled(False)#页面刷出逻辑移到单独函数 执行流程
+            #QMessageBox.information(self, "下载结果", "下载成功")#换成有按键处理的来刷新下载按钮
+            #文件IO
+            self.startDownload.setEnabled(False)#页面刷出逻辑移到单独函数 执行流程
             #browser.quit() #搜索与上次结果不同或新下载开始了才执行这句
 			#self.startSearch.setEnabled(False)
             #多次下载
@@ -161,11 +223,22 @@ class Login(QDialog, Ui_Dialog):
         global directory1
         directory1 = QFileDialog.getExistingDirectory(self,"选取下载目录","C:/")#起始路径
         self.chooseDirectoryPath.setText(directory1)
+		
+    @pyqtSlot()
+    def on_selectMusicList_clicked(self):
+        file,ok= QFileDialog.getOpenFileName(self,"打开","C:/","All Files (*);;Text Files (*.txt)") 
+        #raise NotImplementedError
+    
+    @pyqtSlot()
+    def on_outPutMusicList_clicked(self):
+        directory2 = QFileDialog.getExistingDirectory(self,"选取文件夹","C:/")  # 起始路径
 
 if __name__ == '__main__':
     import sys
     from PyQt5.QtWidgets import QApplication
+    
     app = QApplication(sys.argv)
+    createDB()
     dlg = Login()
     dlg.show()
     sys.exit(app.exec_())
