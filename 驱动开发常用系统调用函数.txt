@@ -1,0 +1,30 @@
+看到《基于》P245
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+int open(const char *path,int oflags)//path准备打开设备文件的名字
+int open(const char *path,int oflags,mode_t mode)//oflags打开文件动
+作（O_RDONLY只读方式O_WRONLY只写O_RDWR读写O_APPEND写入数据追加在文件的末尾O_TRUNC文件长度置为零，丢弃已有内容O_EXCL与O_CREAT一起使用确保创建出文件O_CREAT【用了这个必须带三参数,S_IRUSR用户可读|S_IWUSR用户可写S_IXUSR用户可执行S_IRGRP组可以读】如有需要以mode方式创建文件）
+int write
+read
+
+#include <unistd.h>
+int close(int fildes);
+
+
+示例：
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int main()
+{
+	char c;
+	int in,out;
+	in = open("file.in",O_RDONLY);
+	out = open("file.out",O_WRONLY|O_CREAT,S_IRUSR|S_IWUSR);
+	while(read(in,&c,1)==1)
+		write(out,&c,1);
+	close(in);
+	close(out);
+	exit(0);	
+}
