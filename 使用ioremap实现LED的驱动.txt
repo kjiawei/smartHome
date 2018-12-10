@@ -1,0 +1,135 @@
+一.回顾
+1.linux内核的编译
+2.内核模块--module--->*.ko--->insmod *.ko / rmmod *
+3.字符设备模型---->
+   cdev --->描述一个字符设备.cdev包含什么内容--->设备号(主设备号和次设备号)
+                                             --->文件操作集file_operations
+   cdev的使用方法:cdev_init()/cdev_add()/cdev_del()
+
+思考1:
+     主设备号和次设备号的作用?
+思考2:
+     如何获得一个设备号
+     静态注册--->  int register_chrdev_region(dev_t from, unsigned count, const char *name)
+     动态分配--->  int alloc_chrdev_region(dev_t *dev, unsigned baseminor, unsigned count,const char *name)
+思考3:
+     linux的设备驱动中,给应用程序提供的接口是什么?
+     是file_operations(open/read/write/ioctl/release)
+思考4:
+     在linux中,应用程序如何访问驱动的(字符设备)
+
+     应用程序使用系统IO函数(如:read(fd,buf,size))----->系统调用---->sys_read()--->vfs_read()--->设备驱动程序的file_operations中的read()
+
+思考5:
+     什么是系统调用?
+     应用程序的一个函数去调用内核中的一个函数的方法.
+
+思考6:
+     什么是虚拟文件系统(VFS)
+
+
+二.今天要讲的内容:
+1.如何自动创建设备文件--->class_create()和device_create()
+2.在linux内核中,如何访问硬件的寄存器
+思考:在ARM裸机上(没有linux系统),如何访问寄存器的???
+     每个寄存器都有唯一的地址,使用C语言可以直接访问该地址进而访问寄存器.这个地址是物理地址,不是虚拟地址.但是在linux系统上,可以访问的地址是虚拟地址.
+注意:
+    查看CPU的使用手册的时候,看到的是物理地址(S5PV210_UM_REV1.1.pdf).但是linux系统能访问的地址是虚拟地址.
+
+解决一个问题:
+    我们知道了物理地址,如何找到其对应的虚拟地址?????????
+
+
+
+
+
+三.设计一个字符设备驱动程序的流程(以:LED灯驱动为例)
+
+1.定义一个cdev
+	struct cdev led_dev;
+
+2.申请一个设备号
+	static unsigned int led_major = 0;  //230
+	static unsigned int led_minor = 0;  //0			
+	static dev_t dev_no;
+	int ret;
+	dev_no = MKDEV(led_major, led_minor);
+	if(dev_no > 0) //静态注册设备号
+ 	{
+ 		ret = register_chrdev_region(dev_no, 1, "gec210_led");
+
+	}
+	else  //动态申请设备号
+	{
+		ret = alloc_chrdev_region(&dev_no, led_minor, 1, "gec210_led");
+	}
+
+3.文件操作集
+	int gec210_led_open(struct inode * indoe, struct file * file)
+	{
+
+
+
+	}
+	int gec210_led_release(struct inode *, struct file *)
+	{
+
+
+	}
+
+	ssize_t gec210_led_write(struct file *file, const char __user * buf, size_t size, loff_t *ops)
+	{
+
+
+	}
+
+	struct file_operations gec210_led_fops=
+	{
+		.owner=THIS_MODULE,
+		.open= gec210_led_open,
+		.release=gec210_led_release,
+		.write=gec210_led_write,
+	}
+4.cdev的初始化
+	cdev_init(&led_dev, &gec210_led_fops)
+
+5.注册cdev到内核
+	cdev_add(&led_dev, dev_no, 1)
+
+
+注意:第6部和第7部是一个自动创建设备文件的过程.大家前面学的是手动创建设备文件: #mknod /dev/led_dev 设备类型(c) 主设备号 次设备号
+6.创建一个class
+struct class * class_create(struct module *owner, const char *name)
+void class_destroy(struct class *cls);
+参数说明:
+	struct module *owner --->class属于哪个module
+	const char *name --->class的名字
+例:
+
+struct class *  gec210_led_class;
+gec210_led_class = class_create(THIS_MODULE, "gec210_led_class");
+
+
+7.创建一个device
+
+struct device *device_create(struct class *cls, struct device *parent,dev_t devt, void *drvdata,const char *fmt)
+void device_destroy(struct class *cls, dev_t devt);
+参数说明:
+	struct class *cls -->创建的device属于哪个class.注意有了device和class,linux内核就可以使用mdev这个工具来自动创建设备文件.
+	struct device *parent --->创建的device的parent,一般为NULL
+	dev_t devt --->设备的设备号
+	void *drvdata --->这个device的data,一般为NULL.
+	const char *fmt --->创建的device的名字,如led_drv,则生成的设备文件是/dev/led_drv
+
+
+8.
+
+
+
+
+
+
+
+
+
+
