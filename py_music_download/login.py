@@ -57,7 +57,9 @@ class Login(QDialog, Ui_Dialog):
     Class documentation goes here.
     """
     global directory1
+    global directory2
     directory1 = 'E:/python_music'
+    directory2 = 'E:/python_music'
 	
     def __init__(self, parent=None):
         """
@@ -208,8 +210,8 @@ class Login(QDialog, Ui_Dialog):
 		
             soup = BeautifulSoup(b)
             name = soup.get_text()
-            global directory1
-            path = directory1+'\%s.mp3' % name
+            global directory2
+            path = directory2+'\%s.mp3' % name
             urllib.request.urlretrieve(Local, path, cbk)
             #QMessageBox.information(self, "下载结果", "下载成功")#换成有按键处理的来刷新下载按钮
             #文件IO
@@ -221,6 +223,7 @@ class Login(QDialog, Ui_Dialog):
     @pyqtSlot()
     def on_chooseDirectory_clicked(self):
         global directory1
+	global directory2
         directory2 = QFileDialog.getExistingDirectory(self,"选取下载目录",directory1)#起始路径
 	if(directory2==""):
 	    directory2=directory1
