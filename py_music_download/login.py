@@ -221,8 +221,11 @@ class Login(QDialog, Ui_Dialog):
     @pyqtSlot()
     def on_chooseDirectory_clicked(self):
         global directory1
-        directory1 = QFileDialog.getExistingDirectory(self,"选取下载目录","C:/")#起始路径
-        self.chooseDirectoryPath.setText(directory1)
+        directory2 = QFileDialog.getExistingDirectory(self,"选取下载目录",directory1)#起始路径
+	if(directory2==""):
+	    directory2=directory1
+		
+        self.chooseDirectoryPath.setText(directory2)
 		
     @pyqtSlot()
     def on_selectMusicList_clicked(self):
