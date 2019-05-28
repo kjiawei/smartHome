@@ -1,0 +1,11 @@
+流程：
+
+1、goodsadd.php：引入goodsadd.html模板
+2、goodsaddAct.php：分析数据
+3、goodsact页面映入goodsmodel的add方法
+4、判断结果
+
+
+导入goods-cate.sql
+
+source E:/goods-cate.sql
