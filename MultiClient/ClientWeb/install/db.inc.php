@@ -1,0 +1,10 @@
+<?php
+define('ENKEY','#ENKEY#');
+define('SQLHOST','#SQLHOST#');
+define('SQLUSER','#SQLUSER#');
+define('SQLPWD','#SQLPWD#');
+define('SQLNAME','#SQLNAME#');
+define('NOSQLHOST','#NOSQLHOST#');
+define('NOSQLPORT','#NOSQLPORT#');
+define('DBPREFIX','#DBPREFIX#');
+?>

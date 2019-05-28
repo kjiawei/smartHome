@@ -1,0 +1,195 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="left"
+    android:padding="5dp"
+    tools:context=".CompanyDeviceMainActivity" xmlns:app="http://schemas.android.com/apk/res/com.mysmarthome.mynode">
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/company_device_top_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        android:padding="10dp"
+        android:orientation="vertical" >
+     <TextView   
+            android:id="@+id/company_device_color_hint_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:text="颜色"
+            android:layout_marginTop="5dp"   />  
+      <TextView   
+            android:id="@+id/company_device_color_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:text="#88252525"
+            android:layout_marginTop="5dp"   />  
+      <View
+                android:layout_height="2dp"
+                android:layout_width="match_parent"
+                android:background="@color/cornsilk" />
+      <TextView   
+            android:id="@+id/company_device_timer_hint_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:text="时间"
+            android:layout_marginTop="5dp"   />  
+      <TextView   
+            android:id="@+id/company_device_timer_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:text="2014-07-27"
+            android:layout_marginTop="5dp"   />  
+    </LinearLayout>
+ 
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/company_device_lightness_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        
+        android:layout_marginTop="15dp"  
+        android:layout_below="@+id/company_device_top_layout"
+        android:orientation="vertical" >
+    
+        <TextView   
+            android:id="@+id/company_device_lightness_hint_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="10dp"  
+            android:text="亮度"
+            android:layout_marginTop="5dp"   />  
+    	<com.mysmarthome.mynode.widget.HoloCircleSeekBar
+	        android:id="@+id/company_device_lightness_circularseekbar"
+	        android:layout_gravity="center"
+	        android:layout_width="285dp"
+	        android:layout_height="290dp"
+	        app:max="255"
+	        app:pointer_color="#0174DF"
+	        app:pointer_halo_color="#88252525"
+	        app:pointer_size="25"
+	        app:text_color="#FF0000"
+	        app:text_size="65"
+	        app:wheel_active_color="#00BFFF"
+	        app:wheel_unactive_color="#FFCCCCCC"
+        />
+    	
+  </LinearLayout>
+  
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/company_device_lightness_other_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        
+        android:layout_marginTop="15dp"  
+        android:layout_below="@+id/company_device_top_layout"
+        android:orientation="vertical" >
+    
+        <TextView   
+            android:id="@+id/company_device_lightness_other_hint_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="10dp"  
+            android:text="亮度"
+            android:layout_marginTop="5dp"   />  
+            
+         <ru.clickwheel.ClickWheel
+				    android:id="@+id/wheel"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginLeft="40dip" 
+				    android:layout_marginRight="40dip" 
+         />
+
+  </LinearLayout>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/company_device_color_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        android:layout_marginTop="15dp"  
+        android:layout_below="@+id/company_device_top_layout"
+        android:orientation="vertical" >
+    
+        <TextView   
+            android:id="@+id/company_device_lightness_hint_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="10dp"  
+            android:text="颜色"
+            android:layout_marginTop="5dp"   />  
+    	<com.mysmarthome.mynode.holocolorpicker.ColorPicker
+            android:id="@+id/picker"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+      </LinearLayout>
+           
+     <LinearLayout
+            android:layout_height="@dimen/fake_action_bar_height"
+            android:layout_width="match_parent"
+            android:id="@+id/company_device_fake_action_bar"
+            android:layout_alignParentBottom="true"
+            android:background="@color/actionbar_background_color">
+            <Button
+                android:id="@+id/company_device_lightness_button"
+                android:layout_width="0dip"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                
+ 
+                android:background="@drawable/wizard_button_bg"
+                android:text="亮度"
+                android:src="@drawable/ic_menu_history_lt"/>
+           <Button
+                android:id="@+id/company_device_lightness_other_button"
+                android:layout_width="0dip"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                android:background="@drawable/wizard_button_bg"
+                android:text="亮度2"
+                android:src="@drawable/ic_menu_history_lt"/>
+            
+            <!-- android:background="@drawable/btn_call" -->
+            <Button
+                android:id="@+id/company_device_color_button"
+                               android:layout_width="0dip"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+
+                android:text="颜色"
+                android:background="@drawable/wizard_button_bg"
+                android:src="@drawable/ic_menu_history_lt"/>
+            <Button
+                 android:id="@+id/company_device_timer_button"
+                                 android:layout_width="0dip"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+   
+                 android:text="时间"
+                 android:src="@drawable/ic_menu_history_lt"
+                 android:background="@drawable/wizard_button_bg"
+                 />
+        </LinearLayout>
+        
+        <Button
+                android:id="@+id/company_device_action_divider"
+                android:layout_height="3dp"
+                android:layout_width="80dp"
+                android:layout_above="@id/company_device_fake_action_bar"
+                android:background="@color/orange" />
+        <!-- 
+        <android.view.ext.SatelliteMenu
+			        android:id="@+id/devicemenu"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="bottom|left" 
+			        android:layout_margin="8dp"
+			        android:layout_above="@id/action_divider"/>  
+	     -->
+
+
+</RelativeLayout>

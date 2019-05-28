@@ -1,0 +1,63 @@
+mynode3.3_redis-2.8.6
+-------   动态添加用户，不需要重启服务器
+-------   添加脚本： redis_client.php 测试动态添加用户
+-------   添加启动服务脚本 start_server.sh  一键启动，避免输入过多命令
+
+mynode3.2_redis-2.8.6
+-------   added mydebug ,出问题的时候打印服务器当前状态
+-------   修改脚本，增加root用户，用于调试
+
+mynode3.1_redis-2.8.6
+-------   redisLog  替换 printf , 简化调试方式
+-------   调整60秒 ，client没有交互的话，将此链接关闭，释放资源 
+-------   delete directory ：　home_update　and  si (it is my mistake that added to the git repo)
+
+mynode3.0_redis-2.8.6
+-------   加入简单beatheart 机制 
+
+mynode2.9_redis-2.8.6
+-------   两个同样的用户不能同时登录 
+    
+mynode2.8_redis-2.8.6
+-------    代码基本重构了
+-------    用户信息： 静态内存，修改为动态内存（malloc）
+                      容器由数组，修改为list
+
+mynode2.7_redis-2.8.6
+-------   added node chat feature 
+
+mynode2.5_redis-2.8.6
+-------   added chat feature for android client
+-------
+mynode2.4_redis-2.8.6
+-------  added MY_REDIS_ROOT_NAME for secure
+-------  move is_valid_user to t_hash.c
+-------  add nameCommand for debug 
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+mynode2.3_redis-2.8.6
+------- added nodeid name to client (mynode.c)
+           memset(c->nodeid,0x00,256);
+           memcpy(c->nodeid,c->argv[1]->ptr,strlen(c->argv[1]->ptr));
+-------  sync the command  (you can also hget ...)
+           t_hash.c
+           void sendtoclient(redisClient *c)
+-------  add shell script
+           "start_redis.sh"
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+mynode2.2_redis-2.8.6
+
+------- add  mynode_empty_message
+------- fix bug
+            if(strcmp(c->argv[2]->ptr,"value") &&  strcmp(c->argv[2]->ptr,"command") )
+           {
+              return ;  //should be continue;
+              continue;
+           }
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+-------  credis_re_connect  (if root client close by accident , root client should never be closed )
+-------  #define REDIS_MAXIDLETIME       600     /* default client timeout: infinite */
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+        |
+        |
+       \|/
+    redis-2.8.6

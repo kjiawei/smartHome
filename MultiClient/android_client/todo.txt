@@ -1,0 +1,15 @@
+*1  
+  --- ifttt (if this then that )
+*2
+  --- add wizard (帮助/导航页面)(viewgroup)
+*3
+  --- security 
+*4
+  --- gps
+*5
+  --- 添加仪表盘控制界面
+*6
+  --- 自动更新公司主页信息（restful get json）
+*7
+  ---  
+  

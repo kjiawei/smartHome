@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <ListView  
+			   android:id="@+id/light_ChatList"
+			   android:layout_width="match_parent" 
+			   android:layout_height="wrap_content" 
+			   android:dividerHeight="12px"
+			    android:layout_alignParentTop = "true"
+			   android:layout_above="@+id/light_switch_state"
+			   android:divider="#00FF00"
+      />
+     <Switch
+            android:id="@+id/light_switch_state"
+            android:layout_above="@+id/light_layout_mode_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"  
+            android:textOff="关灯"  
+            android:textOn="开灯"
+            android:text="开关状态" />
+
+    <LinearLayout
+        android:id="@+id/light_layout_mode_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"  
+        android:layout_above="@+id/light_textview_brightness"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="模式选择" />
+
+        <Spinner
+            android:id="@+id/light_spinner_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+  
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="wrap_content"
+             android:id="@+id/light_textview_brightness"
+            android:layout_marginTop="5dp"  
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/light_seekbarBar_brightness"
+            android:text="亮度调整" />
+    
+     <SeekBar
+          android:id="@+id/light_seekbarBar_brightness"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_above="@+id/light_button_speechrecognize"
+          android:layout_marginTop="16dp" />
+     
+     <Button
+          android:id="@+id/light_button_speechrecognize"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_above="@+id/light_SendMessageBar"
+          android:text=" 语音识别开始 "
+          android:layout_marginTop="16dp" />
+    
+    
+
+      <LinearLayout
+      android:id="@+id/light_SendMessageBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:orientation="horizontal"
+      android:paddingBottom="5dip" >
+
+      <EditText
+      		android:layout_height = "wrap_content"
+      		android:layout_width="wrap_content"
+      		android:layout_weight="1"
+      		android:text = ""
+      		android:textSize="18dip"
+      		android:id = "@+id/light_edittext_send_message"
+      />
+      <Button
+      		android:layout_height = "wrap_content"
+      		android:layout_width="wrap_content"
+      		
+      		android:text =" 发 送 "
+      		android:textSize="16dip"
+      		android:id = "@+id/SendMessageButton"
+      />
+
+   </LinearLayout>
+
+
+
+</RelativeLayout>

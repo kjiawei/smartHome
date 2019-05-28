@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect</title>
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="static/css/bootstrap-ie6.min.css">
+<![endif]-->
+<link href="static/css/redirect.css" rel="stylesheet">
+</head>
+<body>
+<div id="redirectbox" class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title"><?php echo lang('common','redirect_title'); ?></h4>
+			</div>
+			<div class="modal-body">
+				<p><?php echo $info; ?></p>
+			</div>
+			<div class="modal-footer">
+				<a href="<?php echo $url; ?>" class="btn btn-primary"><?php echo lang('common','redirect_click'); ?></a>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>setTimeout(function(){<?php echo $js; ?>},2000);</script>
+</body>
+</html>

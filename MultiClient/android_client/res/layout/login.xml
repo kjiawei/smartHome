@@ -1,0 +1,120 @@
+    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_login" >
+    
+    <LinearLayout
+        android:id="@+id/login_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <!-- include layout="@layout/login_top"  -->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/login_name_passwd_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        android:layout_below="@id/login_top_layout"  
+        android:padding="15dip"    
+        android:orientation="vertical" >
+
+    <TextView   
+            android:id="@+id/login_user_input"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+        
+            android:layout_marginTop="5dp"  
+            android:layout_below="@id/login_top_layout"  
+            android:text="@string/login_label_username"  />  
+    <EditText   
+            android:id="@+id/username_edit"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:text="yongming"
+            android:hint="@string/login_username_hint"  
+            android:layout_below="@id/login_user_input"  
+            android:singleLine="true"  
+            android:inputType="text"/>  
+
+        <TextView   
+            android:id="@+id/login_password_input"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@id/username_edit"  
+            android:layout_marginTop="3dp"  
+            android:text="@string/login_label_password" />  
+        <EditText   
+            android:id="@+id/password_edit"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@id/login_password_input"  
+            android:password="true"  
+            android:text="yongming"
+            android:singleLine="true"  
+            android:inputType="textPassword" />  
+      </LinearLayout>
+      
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/login_userid_layout"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_login_div"
+        android:layout_below="@id/login_name_passwd_layout"  
+        android:padding="15dip"   
+        android:layout_marginTop="15dp"   
+        android:orientation="vertical" >
+       <TextView   
+            android:id="@+id/login_getuserid_hint"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@id/password_edit" 
+            android:layout_marginTop="1dp"  
+            android:text="@string/login_getuserid"/>
+        <TextView   
+            android:id="@+id/login_getuserid_textview"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@+id/login_getuserid_hint" />  
+            
+         </LinearLayout>
+       
+        <Button   
+            android:id="@+id/signin_button"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_marginTop="25dp" 
+            android:background="@drawable/background_login_div"
+            android:layout_below="@id/login_userid_layout"   
+            android:text="@string/login_label_signin"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar_login"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signin_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+        
+       <EditText   
+            android:id="@+id/editText_login_send_fake_data"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@id/progressBar_login"  
+          />  
+       <Button   
+            android:id="@+id/button_login_send_fake_data"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_marginTop="10dp" 
+            android:layout_below="@id/editText_login_send_fake_data"   
+            android:text="发送模拟节点数据"/>
+                  
+</RelativeLayout>

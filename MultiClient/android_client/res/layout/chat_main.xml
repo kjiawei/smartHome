@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+
+  <LinearLayout
+      android:id="@+id/SendMessageBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:orientation="horizontal"
+      android:paddingBottom="3dip" >
+
+      <EditText
+      		android:layout_height = "wrap_content"
+      		android:layout_width="wrap_content"
+      		android:layout_weight="1"
+      		android:text = ""
+      		android:textSize="18dip"
+      		android:id = "@+id/ChatMessageText"
+      />
+      <Button
+      		android:layout_height = "wrap_content"
+      		android:layout_width="wrap_content"
+      		android:text ="发送"
+      		android:textSize="16dip"
+      		android:id = "@+id/SendMessageButton"
+      />
+
+   </LinearLayout>
+
+ <ListView  
+	android:id="@+id/ChatList"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content" 
+    android:layout_alignParentTop = "true"
+    android:dividerHeight="12px"
+    android:divider="#00FF00"
+    android:layout_above = "@+id/spineer_chat"
+    />
+ 
+    <Spinner
+        android:id="@+id/spineer_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chat_main_button_speechrecognize"
+    />
+    
+    <Button
+          android:id="@+id/chat_main_button_speechrecognize"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_above="@+id/SendMessageBar"
+          android:text=" 语音识别开始 "
+          android:layout_marginTop="16dp" 
+       />
+    
+
+
+</RelativeLayout>

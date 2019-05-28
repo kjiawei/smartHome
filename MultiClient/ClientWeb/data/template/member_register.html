@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo lang('member','register'); ?></title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/login.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="form-signin" role="form" action="index.php?m=member&a=register" method="post">
+        <h2 class="form-signin-heading"><?php echo lang('member','register'); ?></h2>
+        <input type="text" class="form-control" placeholder="<?php echo lang('member','login_user'); ?>" name="name" required autofocus>
+        <input type="text" class="form-control" placeholder="<?php echo lang('member','reg_email'); ?>" name="email" required>
+        <input type="text" class="form-control" placeholder="<?php echo lang('member','reg_nickname'); ?>" name="familyname" required>
+        <input type="password" class="form-control" placeholder="<?php echo lang('member','login_pwd'); ?>" name="password" required>
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="<?php echo lang('member','register'); ?>">
+      </form>
+
+    </div> <!-- /container -->
+  </body>
+</html>

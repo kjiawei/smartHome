@@ -1,0 +1,83 @@
+tmp_src_filename=fdfs_check_bits.c
+cat <<EOF > $tmp_src_filename
+#include <stdio.h>
+int main()
+{
+	printf("%d\n", sizeof(long));
+	return 0;
+}
+EOF
+
+cc $tmp_src_filename
+bytes=`./a.out`
+
+/bin/rm -f  a.out $tmp_src_filename
+if [ "$bytes" -eq 8 ]; then
+ OS_BITS=64
+else
+ OS_BITS=32
+fi
+
+cat <<EOF > common/_os_bits.h
+#ifndef _OS_BITS_H
+#define _OS_BITS_H
+
+#define OS_BITS  $OS_BITS
+
+#endif
+EOF
+
+TARGET_PATH=/usr/local/bin
+CFLAGS='-O3 -Wall -D_FILE_OFFSET_BITS=64'
+#CFLAGS='-g -Wall -D_FILE_OFFSET_BITS=64 -D__DEBUG__'
+
+uname=`uname`
+if [ "$uname" = "Linux" ]; then
+  CFLAGS="$CFLAGS -DOS_LINUX"
+elif [ "$uname" = "FreeBSD" ]; then
+  CFLAGS="$CFLAGS -DOS_FREEBSD"
+fi
+
+LIBS=''
+if [ -f /usr/lib/libpthread.so ] || [ -f /usr/local/lib/libpthread.so ] || [ -f /usr/lib64/libpthread.so ]; then
+  LIBS="$LIBS -lpthread"
+else
+  line=`nm -D /usr/lib/libc_r.so | grep pthread_create | grep -w T`
+  if [ -n "$line" ]; then
+    LIBS="$LIBS -lc_r"
+  fi
+fi
+
+cd tracker
+cp Makefile.in Makefile
+perl -pi -e "s#\\\$\(CFLAGS\)#$CFLAGS#g" Makefile
+perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Makefile
+perl -pi -e "s#\\\$\(TARGET_PATH\)#$TARGET_PATH#g" Makefile
+make $1 $2
+
+cd ../storage
+cp Makefile.in Makefile
+perl -pi -e "s#\\\$\(CFLAGS\)#$CFLAGS#g" Makefile
+perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Makefile
+perl -pi -e "s#\\\$\(TARGET_PATH\)#$TARGET_PATH#g" Makefile
+make $1 $2
+
+cd ../client
+cp Makefile.in Makefile
+perl -pi -e "s#\\\$\(CFLAGS\)#$CFLAGS#g" Makefile
+perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Makefile
+perl -pi -e "s#\\\$\(TARGET_PATH\)#$TARGET_PATH#g" Makefile
+make $1 $2
+
+cd test
+cp Makefile.in Makefile
+perl -pi -e "s#\\\$\(CFLAGS\)#$CFLAGS#g" Makefile
+perl -pi -e "s#\\\$\(LIBS\)#$LIBS#g" Makefile
+perl -pi -e "s#\\\$\(TARGET_PATH\)#$TARGET_PATH#g" Makefile
+cd ..
+
+if [ "$1" = "install" ]; then
+  cd ..
+  cp restart.sh  /usr/local/bin/
+fi
+

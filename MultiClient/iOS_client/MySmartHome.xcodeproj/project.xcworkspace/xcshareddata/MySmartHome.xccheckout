@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>69778438-FDB5-4C21-B8EE-6BD8E70DF421</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MySmartHome</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3D1B0733-0A5C-4176-B666-149158D3B34D</key>
+		<string>http://git.oschina.net/xmeter/My-smart-home.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS_client/MySmartHome.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3D1B0733-0A5C-4176-B666-149158D3B34D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://git.oschina.net/xmeter/My-smart-home.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3D1B0733-0A5C-4176-B666-149158D3B34D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3D1B0733-0A5C-4176-B666-149158D3B34D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>My-smart-home</string>
+		</dict>
+	</array>
+</dict>
+</plist>

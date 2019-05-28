@@ -1,0 +1,5 @@
+name: 
+version: 
+
+handle:
+- rewrite: if(path ~ "api/(.+)/(.+)\.json(.*)") goto "/api/code/json.php?m=$1&a=$2&%{QUERY_STRING}"

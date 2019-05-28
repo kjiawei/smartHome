@@ -1,0 +1,28 @@
+1  compile
+  1.1  cd  src
+  1.2 make
+
+2 port 分配
+  2.1  loadbalance/geteway :  5000  5001  and more 
+  2.2 msgserver  : 6000 6001 6002 and more
+  2.3 route : 7000 7001 7002 and more
+  2.4 cache/redis :  6379
+
+3
+  数据存储设计
+  ip:port (192.168.0.1:5000)
+  
+4 文件结构说明
+
+5  架构节点说明
+
+6  参考
+   fishchat
+   zimg
+   teamtalk（蘑菇街）
+   beansdb
+7
+   
+   
+
+

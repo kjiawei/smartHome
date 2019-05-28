@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllNode" >
+
+            <Spinner
+                android:id="@+id/spineer_mode_allnode"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"  
+                android:layout_marginTop="5dp"  
+                android:layout_height="wrap_content" />
+            <GridView
+                android:id="@+id/gridView_allnode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:horizontalSpacing="3dp"
+                android:numColumns="2"
+                android:layout_below="@id/spineer_mode_allnode" 
+                android:verticalSpacing="3dp" >
+            </GridView>
+    
+
+</RelativeLayout>
+

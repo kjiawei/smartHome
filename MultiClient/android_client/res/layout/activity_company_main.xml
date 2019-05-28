@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompanyMainActivity" >
+
+   <ListView
+        android:id="@+id/listView_company_device"
+        android:layout_width="fill_parent"
+        android:divider="#000000"
+        android:layout_marginLeft="1px"
+        android:dividerHeight="2px"
+        android:background="@drawable/company_listview_background"
+        android:layout_height="wrap_content" >
+  </ListView>
+  
+  <ListView
+        android:id="@+id/listView_company_information"
+        android:layout_width="fill_parent"
+        android:divider="#000000"
+        android:layout_marginLeft="1px"
+        android:dividerHeight="2px"
+        android:background="@drawable/company_listview_background"
+        android:layout_height="wrap_content" >
+  </ListView>
+  
+   <ListView
+        android:id="@+id/listView_company_more"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="1px"
+        android:divider="#000000"
+        android:dividerHeight="2px"
+        android:background="@drawable/company_listview_background"
+        android:layout_height="wrap_content" >
+        
+  </ListView>
+    
+    <GridView
+                android:id="@+id/gridView_company_main"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:horizontalSpacing="3dp"
+                android:numColumns="3" >
+    </GridView>
+
+</RelativeLayout>

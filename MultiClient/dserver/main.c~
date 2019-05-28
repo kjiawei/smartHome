@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+struct settings {
+    size_t item_buf_size;
+    int maxconns;
+    int port;
+    char *inter;
+    int verbose;
+    float slow_cmd_time;
+    int flush_period;
+    int flush_limit;
+    int num_threads;        /* number of libevent threads to run */
+};
+static void settings_init(void) {
+    settings.port = 7900;
+    /* By default this string should be NULL for getaddrinfo() */
+    settings.inter = NULL;
+    settings.item_buf_size = 4 * 1024;     /* default is 4KB */
+    settings.maxconns = 1024;         /* to limit connections-related memory to about 5MB */
+    settings.verbose = 0;
+    settings.num_threads = 16;
+    settings.flush_limit = 1024; // 1M
+    settings.flush_period = 60 * 10; // 10 min
+    settings.slow_cmd_time = 0.1; // 100ms
+}
+
+int main()
+{
+    int c;
+    struct in_addr addr;
+    bool daemonize = false;
+    int maxcore = 0;
+    char *pid_file = NULL;
+
+    /* init settings */
+    settings_init();
+    /* set stderr non-buffering (for running under, say, daemontools) */
+    setbuf(stderr, NULL);
+
+   return 0;
+}

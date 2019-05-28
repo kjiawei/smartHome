@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API测试</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+	.form-control { display:inline-block;width:500px; }
+	.container { width:900px;margin:10px auto; }
+	</style>
+  </head>
+
+  <body>
+    <div class="container">
+		<h2>ClientAPI测试</h2>
+        <table class="table">
+		<tr><td>API:<br>如member/login</td><td>/api/<input type="text" id="postapi" class="form-control" name="name" required>.json</td></tr>
+		<tr><td>请求方式:</td><td><select id="postway" class="form-control"><option value="get">GET</option><option value="post">POST</option></select></td></tr>
+        <tr><td>数据:<br>JSON格式，如{"user":"admin"}</td>
+		<td><textarea id="postdata" class="form-control">{}</textarea></td>
+		</tr>
+        <tr><td colspan="2" class="text-center"><input id="postsubmit" type="button" class="btn btn-lg btn-primary" value="提交"></td></tr>
+		<tr><td colspan="2"><pre id="result"></pre></td></tr>
+		</table>
+    </div> <!-- /container -->
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$('#postsubmit').click(function(){
+		var way=$('#postway').val().toUpperCase(),postdata=$.parseJSON($.trim($('#postdata').val())),postapi='/api/'+$.trim($('#postapi').val())+'.json';
+		$.ajax({
+			"url":postapi,
+			"cache":false,
+			"data":postdata,
+			"dataType":"text",
+			"type":way,
+			"success":function(data){
+				$('#result').html(data);
+			}
+		});
+	});
+	</script>
+  </body>
+</html>

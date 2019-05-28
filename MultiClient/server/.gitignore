@@ -1,0 +1,15 @@
+*.o
+redis-benchmark
+redis-check-aof
+redis-check-dump
+redis-cli
+redis-sentinel
+redis-server
+
+deps/lua/src/lua
+deps/lua/src/luac
+deps/lua/src/liblua.a
+
+deps
+
+

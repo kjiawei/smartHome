@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo lang('node','title'); ?></title>
+<?php include(TPL.'head.html'); ?>
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header"><?php echo lang('node','title'); ?><a href="index.php?m=node&a=add" class="btn btn-primary"><?php echo lang('node','add'); ?></a></h1>
+			</div>
+			<!-- /.col-lg-12 -->
+		</div>
+		<table class="table table-hover">
+			<thead><th>ID</th><th><?php echo lang('common','value'); ?></th><th><?php echo lang('common','action'); ?></th></thead>
+			<tbody>
+				<?php
+				$this->view->showall('node','<tr><td>{$id}</td><td>{$value}</td><td style="width:255px"><form action="index.php?m=node&a=command" method="post"><input  name="command" type="text" class="form-control"/><input name="nodeid"  type="hidden" value="{$id}" /><input type="submit" value="'.lang('node','command').'" class="btn btn-primary"/></form></td></tr>');
+				?>
+			</tbody>
+		</table>
+	</div>
+	<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<?php include(TPL.'footer.html'); ?>
+</body>
+</html>

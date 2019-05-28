@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/mainRLayout"
+    android:background="#000000"
+    >
+    <com.mysmarthome.mynode.wizard.MyScrollLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"    
+	  android:id="@+id/ScrollLayout"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  android:visibility="visible"
+	  >
+      <RelativeLayout  android:background="@drawable/w01"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  >
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="89dp"
+              android:text="注册，登录"
+              android:textColor="@color/WizaridTextColor"
+              android:textSize="18sp" />
+      </RelativeLayout>
+
+     <RelativeLayout  android:background="@drawable/w01"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  >
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="89dp"
+              android:text="等待设备自动连接"
+              android:textColor="@color/WizaridTextColor"
+              android:textSize="18sp" />
+      </RelativeLayout>
+
+      <RelativeLayout  android:background="@drawable/w01"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent"
+	  >
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="89dp"
+              android:text="控制界面，查看最新状态及控制设备"
+              android:textColor="@color/WizaridTextColor"
+              android:textSize="18sp" />
+      </RelativeLayout>
+      
+
+
+      <RelativeLayout  android:background="@drawable/w01"    
+	  android:layout_width="fill_parent"    
+	  android:layout_height="fill_parent">
+          <Button
+              android:id="@+id/startBtn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="98dp"
+              android:text="开启智能生活"
+              android:textSize="18sp"
+              android:textColor="@color/WizaridTextColor"
+              android:background="@drawable/wizard_button_bg"
+              android:layout_marginLeft="8dp"
+			  android:layout_marginRight="8dp"			  android:layout_gravity="center_vertical"
+              />
+      </RelativeLayout>
+    </com.mysmarthome.mynode.wizard.MyScrollLayout>
+    <LinearLayout 
+    	android:orientation="horizontal" 
+    	android:id="@+id/llayout" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content" 
+    	android:layout_marginBottom="24.0dip" 
+    	android:layout_alignParentBottom="true" 
+    	android:layout_centerHorizontal="true"
+    	android:visibility="visible">
+    	
+        <ImageView android:clickable="true"  android:padding="5.0dip" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/page_indicator_bg" />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/page_indicator_bg" />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/page_indicator_bg" />
+        <ImageView android:clickable="true"  android:padding="5.0dip"  android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/page_indicator_bg" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:id="@+id/animLayout"
+        >
+        <LinearLayout
+            android:id="@+id/leftLayout" 
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+        <ImageView android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/wizard_left"/>
+        <ImageView android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/wizard_left_m"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:id="@+id/rightLayout" 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ImageView android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/wizard_right_m"/>
+        <ImageView android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/wizard_right"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

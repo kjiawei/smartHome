@@ -1,0 +1,47 @@
+android_client_1.1.2
+      ---  少量修改，适应新协议(change chat to user)
+android_client_1.1.2
+      ---  修改部分协议(感谢rex的建议)
+      ---  chat login  ---> user login .. 
+android_client_1.1.1
+      ---  添加GPS功能(实现进入房间，灯自动打开):实现困难，取消
+      ---  添加ipod风格clickwheel
+android_client_1.1.0
+      ---  添加基础包utils（md5,StreamTools......）
+      ---  添加环形seekbar (thanks to Lars Werkman & Jesús Manzano) , 添加颜色的选择
+      ---  此版本号110比较特殊（大学寝室号为110），在此表达对 龙哥，空空，于老板的想念
+android_client_1.0.9
+      ---  add wizard (帮助/导航页面)(viewgroup)
+      ---  add todo.txt (把一些idea记录下来，后续实现) 
+      ---  修复了在线升级的小bug 
+android_client_1.0.8
+      ---  change package name from com.example.mynode to com.mysmarthome.mynode
+      ---  登录的时候，没有输入用户名后者密码的话，实现左右抖动shake效果
+      ---  修复了部分网络问题（异常没有捕捉，跳出了死循环，导致线程结束）
+      ---  登录界面，添加圆角边框
+      ---  移植了卫星按钮 Satellite Menu
+android_client_1.0.7
+      ---  添加一个通用的公司主界面
+android_client_1.0.6
+      ---  提示是否登录 on/off line
+      ---  on  : 显示对应的userid
+      ---  off : userid is NULL
+android_client_1.0.5
+      ---  支持在线升级功能
+      ---  请在WIFI环境下升级，土豪除外
+android_client_1.0.4
+      ---  添加虚拟发送数据功能
+      ---  集成讯飞语言，支持语言控制
+android_client_1.0.3
+      ---  添加显示，登录失败提示信息
+android_client_1.0.2
+      --- 专门为灯这个设备添加一个activity
+android_client_1.0.1
+　　　　--- 添加 changelog.txt
+      --- 简单实现心跳包 （heart beat）机制
+      --- 适配新的协议
+           如：　node ok light name=light,state=open,brightness:255;name=tv,state=close,channel=cctv5
+　　　　　　　　　　node ok temperature name=temperature,value=24,measurement=C
+　　　 --- 添加了一个battery服务，为以后实现手机充电满之后，自动关闭电源开关。
+　　　　
+

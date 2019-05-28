@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="selectuser.js"></script>
+</head>
+<body>
+
+<form> 
+<input type="button" value="get all weixin user " onclick="showUser(this.value)" />
+</form> 
+
+
+<form> 
+please input openid:
+<input type="text" id="openid">
+
+input message :
+<input type="text" id="message">
+
+
+<input type="button" value="send" onclick="sendMessage(this.value)" />
+
+</form>
+
+<form action="upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="uploader image" />
+</form>
+
+<p>
+<div id="txtHint"><b>User info will be listed here.</b></div>
+</p>
+
+</body>
+</html>
+
+

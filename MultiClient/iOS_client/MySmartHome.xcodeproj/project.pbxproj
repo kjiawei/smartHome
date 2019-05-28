@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC8EB50B193B0AD300F42AB8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8EB509193B0AD300F42AB8 /* LoginViewController.m */; };
+		EC8EB50C193B0AD300F42AB8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8EB50A193B0AD300F42AB8 /* LoginViewController.xib */; };
+		ECA62492193B0A62000326F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA62491193B0A62000326F7 /* UIKit.framework */; };
+		ECA62494193B0A62000326F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA62493193B0A62000326F7 /* Foundation.framework */; };
+		ECA62496193B0A62000326F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA62495193B0A62000326F7 /* CoreGraphics.framework */; };
+		ECA6249C193B0A62000326F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECA6249A193B0A62000326F7 /* InfoPlist.strings */; };
+		ECA6249E193B0A62000326F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA6249D193B0A62000326F7 /* main.m */; };
+		ECA624A2193B0A62000326F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA624A1193B0A62000326F7 /* AppDelegate.m */; };
+		ECA624A4193B0A62000326F7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA624A3193B0A62000326F7 /* Default.png */; };
+		ECA624A6193B0A62000326F7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA624A5193B0A62000326F7 /* Default@2x.png */; };
+		ECA624A8193B0A62000326F7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA624A7193B0A62000326F7 /* Default-568h@2x.png */; };
+		ECA624AB193B0A62000326F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA624AA193B0A62000326F7 /* ViewController.m */; };
+		ECA624AE193B0A62000326F7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA624AC193B0A62000326F7 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EC8EB508193B0AD300F42AB8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EC8EB509193B0AD300F42AB8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EC8EB50A193B0AD300F42AB8 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		ECA6248E193B0A62000326F7 /* 我的智能家居.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "我的智能家居.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA62491193B0A62000326F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ECA62493193B0A62000326F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ECA62495193B0A62000326F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ECA62499193B0A62000326F7 /* MySmartHome-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MySmartHome-Info.plist"; sourceTree = "<group>"; };
+		ECA6249B193B0A62000326F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ECA6249D193B0A62000326F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECA6249F193B0A62000326F7 /* MySmartHome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySmartHome-Prefix.pch"; sourceTree = "<group>"; };
+		ECA624A0193B0A62000326F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ECA624A1193B0A62000326F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ECA624A3193B0A62000326F7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		ECA624A5193B0A62000326F7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		ECA624A7193B0A62000326F7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		ECA624A9193B0A62000326F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ECA624AA193B0A62000326F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECA624AD193B0A62000326F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECA6248B193B0A62000326F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECA62492193B0A62000326F7 /* UIKit.framework in Frameworks */,
+				ECA62494193B0A62000326F7 /* Foundation.framework in Frameworks */,
+				ECA62496193B0A62000326F7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECA62485193B0A62000326F7 = {
+			isa = PBXGroup;
+			children = (
+				ECA62497193B0A62000326F7 /* MySmartHome */,
+				ECA62490193B0A62000326F7 /* Frameworks */,
+				ECA6248F193B0A62000326F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECA6248F193B0A62000326F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECA6248E193B0A62000326F7 /* 我的智能家居.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECA62490193B0A62000326F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECA62491193B0A62000326F7 /* UIKit.framework */,
+				ECA62493193B0A62000326F7 /* Foundation.framework */,
+				ECA62495193B0A62000326F7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECA62497193B0A62000326F7 /* MySmartHome */ = {
+			isa = PBXGroup;
+			children = (
+				ECA624A0193B0A62000326F7 /* AppDelegate.h */,
+				ECA624A1193B0A62000326F7 /* AppDelegate.m */,
+				ECA624A9193B0A62000326F7 /* ViewController.h */,
+				ECA624AA193B0A62000326F7 /* ViewController.m */,
+				ECA624AC193B0A62000326F7 /* ViewController.xib */,
+				ECA62498193B0A62000326F7 /* Supporting Files */,
+				EC8EB508193B0AD300F42AB8 /* LoginViewController.h */,
+				EC8EB509193B0AD300F42AB8 /* LoginViewController.m */,
+				EC8EB50A193B0AD300F42AB8 /* LoginViewController.xib */,
+			);
+			path = MySmartHome;
+			sourceTree = "<group>";
+		};
+		ECA62498193B0A62000326F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECA62499193B0A62000326F7 /* MySmartHome-Info.plist */,
+				ECA6249A193B0A62000326F7 /* InfoPlist.strings */,
+				ECA6249D193B0A62000326F7 /* main.m */,
+				ECA6249F193B0A62000326F7 /* MySmartHome-Prefix.pch */,
+				ECA624A3193B0A62000326F7 /* Default.png */,
+				ECA624A5193B0A62000326F7 /* Default@2x.png */,
+				ECA624A7193B0A62000326F7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECA6248D193B0A62000326F7 /* MySmartHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECA624B1193B0A62000326F7 /* Build configuration list for PBXNativeTarget "MySmartHome" */;
+			buildPhases = (
+				ECA6248A193B0A62000326F7 /* Sources */,
+				ECA6248B193B0A62000326F7 /* Frameworks */,
+				ECA6248C193B0A62000326F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySmartHome;
+			productName = MySmartHome;
+			productReference = ECA6248E193B0A62000326F7 /* 我的智能家居.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECA62486193B0A62000326F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = SonWa;
+			};
+			buildConfigurationList = ECA62489193B0A62000326F7 /* Build configuration list for PBXProject "MySmartHome" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ECA62485193B0A62000326F7;
+			productRefGroup = ECA6248F193B0A62000326F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECA6248D193B0A62000326F7 /* MySmartHome */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECA6248C193B0A62000326F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECA6249C193B0A62000326F7 /* InfoPlist.strings in Resources */,
+				ECA624A4193B0A62000326F7 /* Default.png in Resources */,
+				EC8EB50C193B0AD300F42AB8 /* LoginViewController.xib in Resources */,
+				ECA624A6193B0A62000326F7 /* Default@2x.png in Resources */,
+				ECA624A8193B0A62000326F7 /* Default-568h@2x.png in Resources */,
+				ECA624AE193B0A62000326F7 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECA6248A193B0A62000326F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC8EB50B193B0AD300F42AB8 /* LoginViewController.m in Sources */,
+				ECA6249E193B0A62000326F7 /* main.m in Sources */,
+				ECA624A2193B0A62000326F7 /* AppDelegate.m in Sources */,
+				ECA624AB193B0A62000326F7 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECA6249A193B0A62000326F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECA6249B193B0A62000326F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ECA624AC193B0A62000326F7 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECA624AD193B0A62000326F7 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECA624AF193B0A62000326F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ECA624B0193B0A62000326F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECA624B2193B0A62000326F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MySmartHome/MySmartHome-Prefix.pch";
+				INFOPLIST_FILE = "MySmartHome/MySmartHome-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "我的智能家居";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ECA624B3193B0A62000326F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MySmartHome/MySmartHome-Prefix.pch";
+				INFOPLIST_FILE = "MySmartHome/MySmartHome-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "我的智能家居";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECA62489193B0A62000326F7 /* Build configuration list for PBXProject "MySmartHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECA624AF193B0A62000326F7 /* Debug */,
+				ECA624B0193B0A62000326F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECA624B1193B0A62000326F7 /* Build configuration list for PBXNativeTarget "MySmartHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECA624B2193B0A62000326F7 /* Debug */,
+				ECA624B3193B0A62000326F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECA62486193B0A62000326F7 /* Project object */;
+}
