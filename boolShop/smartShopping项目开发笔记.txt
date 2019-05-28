@@ -1,0 +1,27 @@
+项目需求
+
+PHP作为服务端(做为一个o数据处理读取的)-boolShop
+
+安卓端-MyTaobaoTest
+volley框架的详细使用 https://blog.csdn.net/u011324501/article/details/53933212
+1.登录模块
+2.购物车模块
+3.商品展示模块
+4.
+
+底部菜单栏(一个页面一个Fragment):我的 购物车 首页 活动 推荐
+
+微信&前端--boolShop里添加
+
+1.需要某位用户的登录信息正确不正确，
+通过你制定好的类型，指定的方式向服务器的PHP传递参数，PHP进行处理，读取数据库比对，返回指定类型的数据给安卓做为数据交互。。。
+常用几种类型JSON,XML,JSONP等等。。。
+
+2.安卓和PHP你可以分开理解(交互理解:数据传送到指定的PHP处理控制器,PHP处理好,返回值) 
+数据交互(登录 购物车)
+项目指定用JSON来做为数据类型，那你安卓就向PHP，，传送方式:POST/GET
+
+## 数据交互接口
+https://blog.csdn.net/u010098331/article/details/51567352
+https://www.cnblogs.com/bingbingliang-xiaomonv/p/5270025.html
+JSON
