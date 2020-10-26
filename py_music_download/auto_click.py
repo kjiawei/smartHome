@@ -4,6 +4,9 @@
 '''
 丰石公司用于自动浏览网页产生访问数据脚本
 2020.10.26
+
+linux deepin
+chromedriver --version:84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310})
 '''
 
 from selenium import webdriver
